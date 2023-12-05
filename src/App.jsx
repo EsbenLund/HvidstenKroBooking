@@ -1,12 +1,13 @@
-import { useState } from 'react'
 import './App.css'
+import  SignIn  from './components/google/signIn'
+import FpCard from './components/fpCard'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      
+      <FpCard title="Book Et Værelse" />
+      <FpCard title="Book Et Bord" />
+      <FpCard title="Book Et Selskab" />
     </>
   )
 }
