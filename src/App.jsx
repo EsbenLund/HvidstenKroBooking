@@ -1,13 +1,18 @@
 import './App.css'
-import  SignIn  from './components/google/signIn'
-import FpCard from './components/fpCard'
+import ForsidePage from './pages/ForsidePage'
+import LoginPage from './pages/LoginPage'
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <>
-      <FpCard title="Book Et Værelse" />
-      <FpCard title="Book Et Bord" />
-      <FpCard title="Book Et Selskab" />
+    <Router>
+      <Routes>
+        <Route path="/" element={<ForsidePage/>}/>
+        <Route path="/ForsidePage" element={<ForsidePage/>}/>
+        <Route path="/LoginPage" element={<LoginPage/>}/>
+      </Routes>
+    </Router>
     </>
   )
 }
