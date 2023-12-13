@@ -6,12 +6,12 @@ import { doc, setDoc , getDoc, } from "firebase/firestore";
 export default function SignIn() {
     const navigate = useNavigate();
 
-    const signInWithGoogle = () => {
-        signInWithPopup(auth, provider)
-            .then((result) => {
+    const signInWithGoogle = () => { 
+        signInWithPopup(auth, provider) 
+            .then((result) => { 
                 navigate('/ForsidePage');
                 console.log(result);
-                addUser2Db({
+                addUser2Db({ // tilføjer bruger til databasen med de data vi får fra google
                     name: result.user.displayName,
                     email: result.user.email,
                     photoURL: result.user.photoURL,
@@ -56,3 +56,5 @@ export default function SignIn() {
                 </main>
               );
             };
+
+            
