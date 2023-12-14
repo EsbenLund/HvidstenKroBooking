@@ -39,7 +39,7 @@ export default function SignIn() {
 
           return (
                 <main className="flex items-center justify-center w-full text-black p-4 md:p-0">
-                  <div className="border-2 border-black shadow-md p-6 md:p-20 rounded-md w-full md:w-2/3 lg:w-1/2 xl:w-1/3 mt-8">
+                  <div className="bg-white border-2 border-black shadow-md p-6 md:p-20 rounded-md w-full md:w-2/3 lg:w-1/2 xl:w-1/3 mt-8">
                     <h1 className="text-center text-lg md:text-2xl lg:text-3xl xl:text-4xl mb-4">
                       <span className="text-blue-500">G</span><span className="text-red-500">o</span><span className="text-yellow-500">o</span><span className="text-blue-500">g</span><span className="text-green-500">l</span><span className="text-red-500">e</span>
                     </h1>

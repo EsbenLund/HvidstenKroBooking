@@ -5,15 +5,14 @@ export default function CurrentUser() {
     const [currentUser, setCurrentUser] = useState(null);
 
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged((user) => {
-            console.log('onAuthStateChanged triggered with user:', user);
-            setCurrentUser(user);
+        const unsubscribe = auth.onAuthStateChanged((user) => { // Lytter efter ændringer i brugerens loginstatus
+            console.log('onAuthStateChanged triggered with user:', user); 
+            setCurrentUser(user); // Opdaterer currentUser med den aktuelle bruger
         });
-
         // Rens op ved komponentens afmontering
-        return () => {
+        return () => { 
             console.log('Cleaning up...');
-            unsubscribe();
+            unsubscribe(); 
         };
     }, []);
 

@@ -7,5 +7,6 @@ export default function ProfilePage() {
         <>
         <LogOut />
         <CurrentUser />
+        
         </>
     )}
