@@ -20,9 +20,9 @@ export default function CurrentUser() {
     console.log('Rendering with currentUser:', currentUser);
 
     return (
-        <div className="text-black flex">
+        <div className="text-black flex w-full ">
             {currentUser ? (
-                <div className="text-center">
+                <div className="text-center w-2/3 justify-center mx-auto">
                     <h1>Velkommen, {currentUser.displayName}!</h1>
                     <p>Email: {currentUser.email}</p>
                 </div>

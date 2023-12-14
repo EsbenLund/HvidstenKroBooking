@@ -4,29 +4,24 @@ import { useNavigate } from 'react-router-dom';
 export default function LogOut() {
     const navigate = useNavigate(); // bruges til at navigere til en anden side 
 
-    const handleLogout = async () => { 
+    const handleLogout = async () => { // funktionen der logger brugeren ud
         try { 
-            await auth().signOut(); // logger brugeren ud
+            await auth.signOut(); // logger brugeren ud
             navigate("/ForsidePage"); // sender brugeren tilbage til forsiden
         } catch (error) { 
             console.log(error);
         }
 
     };
-
-    const cUser = () => { 
-        const user = auth().currentUser; // henter den aktuelle bruger
-        if (user) { // hvis der er en bruger logget ind
-            return user.displayName;// returner brugerens navn
-        } else {
-            return "ingen bruger logget ind";// ellers returner ingen bruger logget ind
-        }
+    const logUdBtn = {
+        position: 'absolute',
+        top: '5',
+        right: '5',
     }
 
     return(
         <div className="text-black">
-        <h1>Logget ind som {cUser()}</h1>
-        <button onClick={handleLogout}>Log ud</button>
+        <button style={logUdBtn} onClick={handleLogout}>Log ud</button>
         </div>
     )
 }
