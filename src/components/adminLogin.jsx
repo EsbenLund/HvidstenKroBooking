@@ -1,14 +1,14 @@
 import { Navigate } from "react-router-dom";
 export default function AdminLogin() {
-    const handleSubmit = getElementById("adminBtn").addEventListener("click", (e) => {
-        e.preventDefault();
-        const username = e.target.elements.username.value;
-        const password = e.target.elements.password.value;
-        if (username === "adminHvid" && password === "Hvidsten12") {
-            console.log("Du er logget ind");
-            Navigate('/AdminPage');
+    const handleSubmit = getElementById("adminBtn").addEventListener("click", (e) => { 
+        e.preventDefault(); // Prevents the page from reloading
+        const username = e.target.elements.username.value; // tager værdien fra inputfeltet med name="username"
+        const password = e.target.elements.password.value; // tager værdien fra inputfeltet med name="password"
+        if (username === "adminHvid" && password === "Hvidsten12") { // hvis brugernavn og kodeord er korrekt
+            console.log("Du er logget ind"); // skriv dette i konsollen
+            Navigate('/AdminPage');    // send brugeren til admin siden
         } else {
-            alert("Forkert brugernavn eller kodeord");
+            alert("Forkert brugernavn eller kodeord"); // ellers skriv dette i en alert boks
         }
 
     });

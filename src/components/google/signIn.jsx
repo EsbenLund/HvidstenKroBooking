@@ -6,8 +6,8 @@ import { doc, setDoc , getDoc, } from "firebase/firestore";
 export default function SignIn() {
     const navigate = useNavigate();
 
-    const signInWithGoogle = () => { 
-        signInWithPopup(auth, provider) 
+    const signInWithGoogle = () => { // funktion til at logge ind med google
+        signInWithPopup(auth, provider) // åbner et popup vindue med google login
             .then((result) => { 
                 navigate('/ForsidePage');
                 console.log(result);
@@ -25,11 +25,11 @@ export default function SignIn() {
 
     const addUser2Db = async (user) => {
         try {
-            const userDocRef = doc(db, "users", user.uid);
-            const userDoc = await getDoc(userDocRef);
-            if (!userDoc.exists()) {
-                await setDoc(userDocRef, user);
-            } else {
+            const userDocRef = doc(db, "users", user.uid); // referencen til brugeren i databasen
+            const userDoc = await getDoc(userDocRef); // henter brugeren fra databasen
+            if (!userDoc.exists()) { // hvis brugeren ikke findes i databasen
+                await setDoc(userDocRef, user); // tilføj brugeren til databasen
+            } else { // ellers
                 console.log("Bruger med dette uid, eksisterer allerede i databasen");
             }
         } catch (error) {
@@ -57,4 +57,3 @@ export default function SignIn() {
               );
             };
 
-            
