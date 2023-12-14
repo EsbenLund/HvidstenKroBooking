@@ -6,6 +6,7 @@ import Navbar from "../components/navbarForside"
 import ForsideTop from "../components/forsideTop"
 import ForsideBund from "../components/forsideBund"
 
+
 export default function ForsidePage() {
     return (
         <>
@@ -16,6 +17,7 @@ export default function ForsidePage() {
          <FpCard img={bord} title="Book Et Bord" />
          <FpCard img={selskab} title="Book Et Selskab" />
         </div>
+      
          <ForsideBund />
         </>
 
