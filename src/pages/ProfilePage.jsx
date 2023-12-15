@@ -1,5 +1,6 @@
 import CurrentUser from '../components/currentUser';
 import LogOut from '../components/google/logOut';
+import ProfileBox from '../components/profileInfo';
 export default function ProfilePage() {
    
 
@@ -7,6 +8,6 @@ export default function ProfilePage() {
         <>
         <LogOut />
         <CurrentUser />
-        
+        <ProfileBox />
         </>
     )}

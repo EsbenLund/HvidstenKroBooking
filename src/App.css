@@ -172,4 +172,56 @@ html{
     padding: 0 16%;
   }
 
+  .Room-card {
+    width: 60%;
+  }
+  
+  @media only screen and (max-width: 480px) {
+  
+  /*--- Bookroom page ---*/
 
+  .headline {
+    font-size: 15px;
+  }
+  
+  .intro-text {
+    font-size: 15px;
+  }
+
+  .Room-card {
+    width: 95%;
+  }
+
+  .Room-card > div {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .Card-heading {
+    font-size: 18px;
+  }
+
+/*---- Modal på bookroompage ---*/
+
+.modal-content {
+  flex-direction: column;
+}
+
+.modal-info-text {
+  font-size: 15px;
+}
+
+.modal {
+  width: 90%;
+}
+
+.modal-head-text {
+  font-size: 11px;
+}
+
+.close {
+  top: -4%;
+}
+
+  
+  }

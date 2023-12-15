@@ -9,13 +9,21 @@ export default function ProfilLink() {
         right:'5px',
         color: 'white',
         zIndex: '1000',
-        width: '32px',
-        height: '32px',
+        width: '35px',
+        height: '35px',
+    };
+    const profilP = {
+       position: 'absolute',
+       top:'15px',
+       right:'40px',
+       color: 'white',
+       zIndex: '1000',
     };
     return (
         <>
             <Link to="/ProfilePage">
-                <FontAwesomeIcon className="text-[#D69E10]" style={profilStyle} icon={faUser} />
+                <FontAwesomeIcon className="" style={profilStyle} icon={faUser} />
+                <p style={profilP}>Min Profil</p>
             </Link>
         </>
     )

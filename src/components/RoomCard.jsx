@@ -1,6 +1,7 @@
 
 
 
+
 import Phones from "../assets/NoPhones.png";
 import Smoke from "../assets/NoSmoking.png";
 import Animal from "../assets/NoAnimals.png";
@@ -32,7 +33,7 @@ const RoomCard = ({ heading, price }) => {
       padding: '10px',
       display: 'flex',
       alignItems: 'center',
-      width: '60%', 
+      
       margin: '0 auto', 
     }}>
       <div style={{
