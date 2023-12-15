@@ -27,44 +27,71 @@ export default function ProfileBox () {
   };
 
   return (
-    <div className="flex flex-col mt-4 justify-center w-full">
-      <h2>Profiloplysninger</h2>
-      <form className=" bg-[#F5EAC9] flex flex-col text-white mt-8 w-1/2" >
-        <div className="">
-        <label htmlFor="name">Navn:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
+    <>
+  <div>
+    <h2 className="text-center mt-2">Personlige Oplysninger:</h2>
+  </div>
+  <div className="flex w-full justify-center">
+    <form className="bg-[#F5EAC9] text-black mt-2 w-2/3">
+      <div className="flex mb-4">
+        <div className="w-1/2 pr-2">
+          <label htmlFor="name">Navn:</label>
         </div>
-        <label htmlFor="address">Adresse:</label>
-        <input
-          type="text"
-          id="address"
-          name="address"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          required
-        />
-        <label htmlFor="mobile">Mobilnummer:</label>
-        <input
-          type="text"
-          id="mobile"
-          name="mobile"
-          value={mobile}
-          onChange={(e) => setMobile(e.target.value)}
-          required
-        />
+        <div className="w-1/2">
+          <input
+            className="text-end border rounded p-1 w-full"
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
+      </div>
+      <div className="flex mb-4">
+        <div className="w-1/2 pr-2">
+          <label htmlFor="address">Adresse:</label>
+        </div>
+        <div className="w-1/2">
+          <input
+            className="text-end border rounded p-1 w-full"
+            type="text"
+            id="address"
+            name="address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            required
+          />
+        </div>
+      </div>
+      <div className="flex mb-4">
+        <div className="w-1/2 pr-2">
+          <label htmlFor="mobile">Mobilnummer:</label>
+        </div>
+        <div className="w-1/2">
+          <input
+            className="text-end border rounded p-1 w-full"
+            type="text"
+            id="mobile"
+            name="mobile"
+            value={mobile}
+            onChange={(e) => setMobile(e.target.value)}
+            required
+          />
+        </div>
+      </div>
+      <button
+        className="bg-black text-white px-4 py-2 rounded justify-center w-full"
+        type="button"
+        onClick={saveProfile}
+      >
+        Gem
+      </button>
+    </form>
+  </div>
+</>
 
-        <button type="button" onClick={saveProfile}>
-          Gem
-        </button>
-      </form>
-    </div>
   );
 };
 

@@ -180,13 +180,13 @@ html{
 
   /*--- Navbar ---*/
   .arrow-kro {
-    width: 35px;
+    width: 20px;
     height: 35px;
   }
 
   .logo-kro {
-    width: 30px;
-    height: 30px;
+    width: 55px;
+    height: 55px;
   }
   
   /*--- Bookroom page ---*/
@@ -197,7 +197,7 @@ html{
   
   .intro-text {
     font-size: 16px;
-    padding: 0 5%;
+    padding: 0 1%;
     }
 
   .Room-card {
