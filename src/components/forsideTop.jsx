@@ -1,6 +1,5 @@
-import hvidstenkroTop from '../assets/hvidstenkroTop.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser} from '@fortawesome/free-solid-svg-icons';
+import HvidstenTop from '../assets/forside2.png';
+
 
 export default function ForsideTop() {
     const forsideNav = {
@@ -9,7 +8,7 @@ export default function ForsideTop() {
     }
     return(
         <nav style={forsideNav}>
-        <img src={hvidstenkroTop}></img>
+        <img src={HvidstenTop}></img>
         </nav>
     
     )
