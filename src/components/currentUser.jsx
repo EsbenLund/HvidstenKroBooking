@@ -11,12 +11,9 @@ export default function CurrentUser() {
         });
         // Rens op ved komponentens afmontering
         return () => { 
-            console.log('Cleaning up...');
             unsubscribe(); 
         };
     }, []);
-
-    console.log('Rendering with currentUser:', currentUser);
 
     return (
         <div className="text-black flex w-full ">

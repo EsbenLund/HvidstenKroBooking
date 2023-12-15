@@ -1,31 +1,53 @@
-import { Navigate } from "react-router-dom";
-export default function AdminLogin() {
-    const handleSubmit = getElementById("adminBtn").addEventListener("click", (e) => { 
-        e.preventDefault(); // Prevents the page from reloading
-        const username = e.target.elements.username.value; // tager værdien fra inputfeltet med name="username"
-        const password = e.target.elements.password.value; // tager værdien fra inputfeltet med name="password"
-        if (username === "adminHvid" && password === "Hvidsten12") { // hvis brugernavn og kodeord er korrekt
-            console.log("Du er logget ind"); // skriv dette i konsollen
-            Navigate('/AdminPage');    // send brugeren til admin siden
-        } else {
-            alert("Forkert brugernavn eller kodeord"); // ellers skriv dette i en alert boks
-        }
+import { useNavigate } from "react-router-dom";
 
-    });
-        
+export default function AdminLogin() {
+    const Navigate = useNavigate();
+
+    const checkPswd = () => {
+        const correctUsername = "adminHvid";
+        const correctPassword = "Hvidsten12";
+
+        const enteredUsername = document.getElementById("username").value;
+        const enteredPassword = document.getElementById("pswd").value;
+
+        if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+            console.log("Du er logget ind");
+            Navigate('/AdminPage');
+        } else {
+            alert("Forkert brugernavn eller kodeord");
+        }
+    };
+
     return (
         <>
-        <h1>Hvidsten Kro - Admin Login</h1>
-        <p></p>
-        <form className="flex flex-column" onSubmit={handleSubmit}>
-            <label>
-                <input type="text" name="username" required placeholder="Indtast Brugernavn"></input>
-            </label>
-            <label>
-                <input type="password" required name="password" placeholder="Indtast kode"></input>
-            </label>
-            <button id="adminBtn" type="submit">Login</button>
-        </form>
+            <h1 className="text-center">Hvidsten Kro - Admin Login</h1>
+            <p className="text-center"></p>
+            <div className="flex justify-center align-center">
+                <form className="flex flex-col w-1/2 mt-2">
+                    <label>
+                        <input
+                            className="bg-white text-black w-full mb-1 text-center h-8"
+                            type="text"
+                            id="username"
+                            placeholder="Indtast Brugernavn"
+                        />
+                    </label>
+                    <label>
+                        <input
+                            className="w-full bg-white text-black mb-1 text-center h-8"
+                            type="password"
+                            id="pswd"
+                            placeholder="Indtast kode"
+                        />
+                    </label>
+                    <input
+                        className="bg-[#653535] h-10 text-white"
+                        type="button"
+                        value="Login"
+                        onClick={checkPswd}
+                    />
+                </form>
+            </div>
         </>
-    )
-};
+    );
+}

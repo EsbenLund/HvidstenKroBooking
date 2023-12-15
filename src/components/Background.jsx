@@ -1,3 +1,5 @@
+
+
 import header from "../assets/header.png";
 import footer from "../assets/footersten.png";
 import logo from "../assets/krologo.png";
@@ -47,8 +49,11 @@ export default function Background() {
       </div>
       
       <div className="logonarrow" style={rowStyle}>
+        <a href="/">
         <img className="arrow-kro" src={arrow} alt="Go back arrow" style={imgStyle} />
-        <h1 className='headline'>Book Ophold på Hvidsten Kro</h1>
+        </a>
+
+        
         <img className="logo-kro" src={logo} alt="Kro Logo" style={imgStyle} />
         {}
       </div>

@@ -5,6 +5,8 @@ import værelse from "../assets/værelse.png"
 import Navbar from "../components/navbarForside"
 import ForsideTop from "../components/forsideTop"
 import ForsideBund from "../components/forsideBund"
+import ProfilLink from "../components/profilLink"
+
 
 
 export default function ForsidePage() {
@@ -14,15 +16,16 @@ export default function ForsidePage() {
     }
     return (
         <>
+        
         <ForsideTop />
          <Navbar />
-         <h1>Book Vores Faciliteter</h1>
-         <section>
-            <p>Oplev vores traditionelle kro og book nemt din næste oplevelse hos os! 
-            Uanset om du ønsker at reservere et bord til vores lækre <em style={emStyle}>madoplevelser</em> eller sikre dig en overnatning i vores hyggelige værelser,
-            kan du nemt gøre det online via vores bookingsystem</p>
+         <h1 className="text-center text-[#653535] font-bold text-lg">Book Vores Faciliteter</h1>
+         <section className="text-center text-black m-2">
+            <p className="snavret-tekst">Oplev vores traditionelle kro og book nemt din næste oplevelse hos os! 
+            Uanset om du ønsker at reservere et bord til vores lækre <em style={emStyle}>madoplevelser</em> eller sikre dig en overnatning i vores <em style={emStyle}>hyggelige værelser</em>,
+            kan du nemt gøre det online via vores bookingsystem</p> <br />
 
-            <p>Du har også mulighed for at ringe til os direkte på <em style={emStyle}>8647 7022</em>. 
+            <p className="snavret-tekst">Du har også mulighed for at ringe til os direkte på <em style={emStyle}>8647 7022</em>. 
             Vi ser frem til at byde dig velkommen til en smagfuld og komfortabel tid hos os!</p>
          </section>
          <div className="flex flex-wrap justify-center gap-4">

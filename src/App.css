@@ -1,8 +1,174 @@
 #root{
-    background-color:#FCF8EC;
+    background: linear-gradient(to bottom, #DFD09A 20%, #FCF8EC); 
     min-height: 100vh;
     width: 100%;
 }
 html{
     background-color:white;
 }
+/*---- Background ---*/
+
+.logonarrow {
+    justify-content: space-around;
+    gap: 75%;
+    margin: 1%;
+  }
+  
+  
+  .arrow-kro {
+    width: 55%;
+    height: 55%;
+  }
+  
+  .logo-kro {
+    width: 9%;
+    height: 9%;
+  }
+  
+  
+  /*--- BookRoom ---*/
+  
+  .headline {
+    color: #653535;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    margin: 1%;
+  }
+  
+  .intro-text {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 0;
+    padding: 0 10%;
+    padding-bottom: 2%;
+    color: black;
+  }
+  
+  .Room-card {
+    
+  }
+  
+  .Card-text {
+    color: white;
+    text-align: start;
+  }
+  
+  .Card-heading {
+    font-size: 18px;
+    
+  }
+  
+  
+  /*--- Modal ---*/
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background-color: #6C1011;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  
+  .modal-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+  
+  .modal-content {
+    display: flex;
+    align-items: center;
+    background-color: #FCF8EC;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  
+  .modal-head-text {
+    font-size: 13px;
+  }
+  
+  .modal-head-titel {
+    font-size: 22px;
+  }
+  
+  
+  .modal-info-text {
+    color: black;
+    text-align: start;
+  }
+  
+  .modal-info-titel {
+    color: #6C1011;
+    text-align: start;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  .room-info {
+    flex-grow: 1;
+    border: 2px solid #653535; 
+    border-radius: 2%;
+    padding: 2%;
+  }
+  
+  
+  .close {
+    position: absolute;
+    top: -5%;
+    right: 0;
+    font-size: 40px;
+    cursor: pointer;
+    color: white; /* Ændr farven efter behov */
+  }
+  
+  
+  .book-button {
+    background-color: #1E1E1E;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    /* Tilpas yderligere styling efter behov */
+  }
+  
+  /* Ekstra styling for hover-effekt (valgfrit) */
+  .book-button:hover {
+    background-color: #333;
+  }
+  
+  .snavret-tekst {
+    padding: 0 16%;
+  }
+
+

@@ -1,8 +1,9 @@
 import SignIn from "../components/google/signIn"
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 export default function LoginPage() {
+    const Navigate = useNavigate();
     function go2admin() {
-        Navigate('/AdminPage')
+        Navigate('/AdminLoginPage')
     };
     const adminBtn = {
         textAlign: 'center',
