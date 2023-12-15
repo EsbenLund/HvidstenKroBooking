@@ -6,6 +6,7 @@ import Navbar from "../components/navbarForside"
 import ForsideTop from "../components/forsideTop"
 import ForsideBund from "../components/forsideBund"
 import ProfilLink from "../components/profilLink"
+import { Link } from "react-router-dom"
 
 
 
@@ -29,9 +30,9 @@ export default function ForsidePage() {
             Vi ser frem til at byde dig velkommen til en smagfuld og komfortabel tid hos os!</p>
          </section>
          <div className="flex flex-wrap justify-center gap-4">
-         <FpCard img={værelse} title="Book Et Værelse" />
-         <FpCard img={bord} title="Book Et Bord" />
-         <FpCard img={selskab} title="Book Et Selskab" />
+         <Link to="/BookRoom"><FpCard img={værelse} title="Book Et Værelse" /></Link>
+         <Link to="/BookBord"><FpCard img={bord} title="Book Et Bord" /></Link>
+         <Link to="/BookSelskab"><FpCard img={selskab} title="Book Et Selskab" /></Link>
         </div>
       
          <ForsideBund />

@@ -11,7 +11,7 @@ export default function FpCard({ img, title }) {
     <img className="" src={img} alt="Billede fra Kroen"/>  
      <div className="p-3 flex flex-row justify-evenly">   
         <h5 className=" text-l font-bold text-[#653535]">{title}</h5>
-        <Link to="/" className=" items-center px-2 py-1 text-sm font-medium text-center rounded-full border-2 border-[#D69E10]">
+        <Link to='{/link}' className=" items-center px-2 py-1 text-sm font-medium text-center rounded-full border-2 border-[#D69E10]">
         <FontAwesomeIcon className="text-[#D69E10]" icon={faArrowRight} />
         </Link>
      </div>
