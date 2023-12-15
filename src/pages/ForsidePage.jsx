@@ -23,7 +23,7 @@ export default function ForsidePage() {
          <section className="text-center text-black m-2">
             <p className="snavret-tekst">Oplev vores traditionelle kro og book nemt din næste oplevelse hos os! 
             Uanset om du ønsker at reservere et bord til vores lækre <em style={emStyle}>madoplevelser</em> eller sikre dig en overnatning i vores <em style={emStyle}>hyggelige værelser</em>,
-            kan du nemt gøre det online via vores bookingsystem</p> <br />
+            kan du nemt gøre det online via vores <em style={emStyle}>bookingsystem </em></p> <br />
 
             <p className="snavret-tekst">Du har også mulighed for at ringe til os direkte på <em style={emStyle}>8647 7022</em>. 
             Vi ser frem til at byde dig velkommen til en smagfuld og komfortabel tid hos os!</p>

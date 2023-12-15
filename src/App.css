@@ -5,24 +5,26 @@
 }
 html{
     background-color:white;
+    
 }
 /*---- Background ---*/
 
 .logonarrow {
-    justify-content: space-around;
-    gap: 75%;
-    margin: 1%;
+    
+    gap: 60%;
+    
   }
   
   
   .arrow-kro {
-    width: 55%;
-    height: 55%;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
   }
   
   .logo-kro {
-    width: 9%;
-    height: 9%;
+    width: 85px;
+    height: 85px;
   }
   
   
@@ -40,7 +42,7 @@ html{
     font-size: 18px;
     text-align: center;
     margin-top: 0;
-    padding: 0 10%;
+    margin: 0 15%;
     padding-bottom: 2%;
     color: black;
   }
@@ -58,7 +60,6 @@ html{
     font-size: 18px;
     
   }
-  
   
   /*--- Modal ---*/
   

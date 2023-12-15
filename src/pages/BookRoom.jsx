@@ -1,11 +1,5 @@
-
-
-
-
 import RoomCard from '../components/RoomCard';
 import Background from '../components/Background';
-
-
 
 export default function BookRoom() {
     return (
