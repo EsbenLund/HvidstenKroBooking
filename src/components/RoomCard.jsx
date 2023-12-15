@@ -90,7 +90,7 @@ const RoomCard = ({ heading, price }) => {
                 <p className="modal-info-text">Pris: {price} kr. pr. nat</p>
                 <p className="modal-info-text">Dobbeltværelse inkl. morgenmad.</p>
                 <p className="modal-info-text">Ekstra opredning: kr. 185,- pr. nat (gælder kun for børn til og med 12 år)</p>
-                <p className="modal-info-text">Der er varmt og koldt vand på alle værelserne samt toilet og bad på gangen.</p>
+                <p className="modal-info-text modal-text-none">Der er varmt og koldt vand på alle værelserne samt toilet og bad på gangen.</p>
                 <br />
                 <h2 className="modal-info-titel">Morgenmad</h2>
                 <p className="modal-info-text">Der serveres morgenmad imellem kl. 8.00 og kl. 10.00</p>

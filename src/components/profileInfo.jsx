@@ -27,9 +27,10 @@ export default function ProfileBox () {
   };
 
   return (
-    <div className="flex justify-center w-full">
+    <div className="flex flex-col mt-4 justify-center w-full">
       <h2>Profiloplysninger</h2>
-      <form className=" bg-[#F5EAC9] text-white mt-8 flex flex-col w-1/2" >
+      <form className=" bg-[#F5EAC9] flex flex-col text-white mt-8 w-1/2" >
+        <div className="">
         <label htmlFor="name">Navn:</label>
         <input
           type="text"
@@ -39,6 +40,7 @@ export default function ProfileBox () {
           onChange={(e) => setName(e.target.value)}
           required
         />
+        </div>
         <label htmlFor="address">Adresse:</label>
         <input
           type="text"

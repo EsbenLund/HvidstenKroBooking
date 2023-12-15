@@ -177,16 +177,28 @@ html{
   }
   
   @media only screen and (max-width: 480px) {
+
+  /*--- Navbar ---*/
+  .arrow-kro {
+    width: 35px;
+    height: 35px;
+  }
+
+  .logo-kro {
+    width: 30px;
+    height: 30px;
+  }
   
   /*--- Bookroom page ---*/
 
   .headline {
-    font-size: 15px;
+    font-size: 20px;
   }
   
   .intro-text {
-    font-size: 15px;
-  }
+    font-size: 16px;
+    padding: 0 5%;
+    }
 
   .Room-card {
     width: 95%;
@@ -212,16 +224,23 @@ html{
 }
 
 .modal {
-  width: 90%;
+  width: 95%;
 }
 
 .modal-head-text {
   font-size: 11px;
 }
 
+.modal-info-titel {
+  font-size: 16px;
+}
+
 .close {
   top: -4%;
 }
 
+.modal-text-none {
+  display: none;
+}
   
   }
