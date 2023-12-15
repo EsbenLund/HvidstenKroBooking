@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 
 export default function ProfileBox () {
@@ -27,6 +26,7 @@ export default function ProfileBox () {
   };
 
   return (
+    
     <>
   <div>
     <h2 className="text-center mt-2">Personlige Oplysninger:</h2>
@@ -39,9 +39,10 @@ export default function ProfileBox () {
         </div>
         <div className="w-1/2">
           <input
-            className="text-end border rounded p-1 w-full"
+            className="text-end border-2 border-black rounded p-1 w-full bg-transparent"
             type="text"
             id="name"
+            placeholder="Indtast Navn"
             name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -55,8 +56,9 @@ export default function ProfileBox () {
         </div>
         <div className="w-1/2">
           <input
-            className="text-end border rounded p-1 w-full"
+            className="text-end border-2 border-black rounded p-1 w-full bg-transparent"
             type="text"
+            placeholder="Indtast Adresse"
             id="address"
             name="address"
             value={address}
@@ -71,8 +73,9 @@ export default function ProfileBox () {
         </div>
         <div className="w-1/2">
           <input
-            className="text-end border rounded p-1 w-full"
+            className="text-end border-2 border-black rounded p-1 w-full bg-transparent"
             type="text"
+            placeholder="Indtast Mobilnummer"
             id="mobile"
             name="mobile"
             value={mobile}

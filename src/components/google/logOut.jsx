@@ -15,12 +15,13 @@ export default function LogOut() {
     };
     const logUdBtn = {
         position: 'absolute',
-        top: '5',
-        right: '5',
+        top: '15px',
+        left: '10px',
+    
     }
 
     return(
-        <div className="text-black">
+        <div className="text-white">
         <button style={logUdBtn} onClick={handleLogout}>Log ud</button>
         </div>
     )

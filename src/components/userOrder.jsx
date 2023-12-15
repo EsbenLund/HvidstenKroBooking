@@ -1,29 +1,37 @@
 import { db, auth } from "./google/config";
 import { useState, useEffect } from "react";
 
-export default function uOrder() {
+export default function Uorder() {
   const [userOrders, setUserOrders] = useState([]);
 
   useEffect(() => {
-    // Hent den aktuelle brugers UID
-    const currentUserUid = auth().currentUser?.uid;
+    const fetchUserOrders = async () => {
+      // Vent på, at Firebase initialiseres
+      const firebaseAuth = await auth;
 
-    // Check om der er en bruger logget ind
-    if (currentUserUid) {
-      // Opret en reference til Bestillinger-samlingen med en where-klausul
-      const ordre = db 
-        .collection("Bestillinger") // Refererer til samlingen "Bestillinger"
-        .where("uid", "==", currentUserUid) // Hent kun bestillinger, hvor uid er lig med den aktuelle brugers uid
-        .onSnapshot((snapshot) => {
-          const data = snapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-          }));
-          setUserOrders(data);
-        });
+      // Hent den aktuelle brugers UID
+      const currentUserUid = firebaseAuth.currentUser?.uid;
 
-      return () => ordre();
-    }
+      // Check om der er en bruger logget ind
+      if (currentUserUid) {
+        // Opret en reference til Bestillinger-samlingen med en where-klausul
+        const ordre = db 
+          .collection("Bestillinger")
+          .where("uid", "==", currentUserUid)
+          .onSnapshot((snapshot) => {
+            const data = snapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }));
+            setUserOrders(data);
+          });
+
+        return () => ordre();
+      }
+    };
+
+    // Kald den asynkrone funktion
+    fetchUserOrders();
   }, []);
 
   console.log(userOrders);

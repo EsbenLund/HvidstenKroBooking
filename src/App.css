@@ -19,7 +19,7 @@ html{
   .arrow-kro {
     width: 60px;
     height: 60px;
-    min-width: 60px;
+    
   }
   
   .logo-kro {
@@ -178,15 +178,15 @@ html{
   
   @media only screen and (max-width: 480px) {
 
-  /*--- Navbar ---*/
+  /*--- Background ---*/
   .arrow-kro {
-    width: 20px;
-    height: 35px;
+    width: 45px;
+    
   }
 
   .logo-kro {
-    width: 55px;
-    height: 55px;
+    width: 75px;
+    height: 75px;
   }
   
   /*--- Bookroom page ---*/
