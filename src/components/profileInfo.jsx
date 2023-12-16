@@ -32,7 +32,7 @@ export default function ProfileBox () {
     <h2 className="text-center mt-2">Personlige Oplysninger:</h2>
   </div>
   <div className="flex w-full justify-center">
-    <form className="bg-[#F5EAC9] text-black mt-2 w-2/3">
+    <form className="bg-[#F5EAC9] text-black mt-2 w-2/3 p-4">
       <div className="flex mb-4">
         <div className="w-1/2 pr-2">
           <label htmlFor="name">Navn:</label>

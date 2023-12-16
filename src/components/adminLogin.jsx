@@ -1,20 +1,20 @@
 import { useNavigate } from "react-router-dom";
 
-export default function AdminLogin() {
+export default function AdminLogin() { // funktionen der håndterer login til admin siden
     const Navigate = useNavigate();
 
     const checkPswd = () => {
-        const correctUsername = "adminHvid";
-        const correctPassword = "Hvidsten12";
+        const correctUsername = "adminHvid"; // brugernavn til admin siden
+        const correctPassword = "Hvidsten12"; // kodeord til admin siden
 
-        const enteredUsername = document.getElementById("username").value;
-        const enteredPassword = document.getElementById("pswd").value;
+        const enteredUsername = document.getElementById("username").value; // henter brugernavnet fra input feltet
+        const enteredPassword = document.getElementById("pswd").value; // henter kodeordet fra input feltet
 
-        if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
-            console.log("Du er logget ind");
-            Navigate('/AdminPage');
+        if (enteredUsername === correctUsername && enteredPassword === correctPassword) { // hvis brugernavnet og kodeordet er korrekt
+            console.log("Du er logget ind"); 
+            Navigate('/AdminPage'); // navigerer til admin siden
         } else {
-            alert("Forkert brugernavn eller kodeord");
+            alert("Forkert brugernavn eller kodeord"); // ellers vises en alert med beskeden om at brugernavnet eller kodeordet er forkert
         }
     };
 

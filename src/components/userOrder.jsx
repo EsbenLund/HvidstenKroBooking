@@ -7,7 +7,7 @@ export default function Uorder() {
   useEffect(() => {
     const fetchUserOrders = async () => {
       // Vent på, at Firebase initialiseres
-      const firebaseAuth = await auth;
+      const firebaseAuth = await auth();
 
       // Hent den aktuelle brugers UID
       const currentUserUid = firebaseAuth.currentUser?.uid;
@@ -16,10 +16,10 @@ export default function Uorder() {
       if (currentUserUid) {
         // Opret en reference til Bestillinger-samlingen med en where-klausul
         const ordre = db 
-          .collection("Bestillinger")
-          .where("uid", "==", currentUserUid)
-          .onSnapshot((snapshot) => {
-            const data = snapshot.docs.map((doc) => ({
+          .collection("Bestillinger") // Refererer til Bestillinger-samlingen
+          .where("uid", "==", currentUserUid) // Hent kun bestillinger, hvor uid er lig med den aktuelle brugers uid
+          .onSnapshot((snapshot) => { 
+            const data = snapshot.docs.map((doc) => ({ 
               id: doc.id,
               ...doc.data(),
             }));
@@ -37,11 +37,10 @@ export default function Uorder() {
   console.log(userOrders);
 
   return (
-    <div>
-      <h1>Dine bestillinger</h1>
+    <div className="flex flex-col items-center justify-center w-full">
+      <h1>Dine Bestillinger:</h1>
       {userOrders.map((order) => (
         <div key={order.id}>
-          {/* Vis de relevante oplysninger om hver bestilling her */}
           <p>{order.orderDetails}</p>
         </div>
       ))}

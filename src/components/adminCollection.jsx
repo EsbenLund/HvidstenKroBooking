@@ -1,23 +1,23 @@
 import { db } from "./google/config";
 import { useState, useEffect } from "react";
 
-export default function AdminOverblik() {
+export default function AdminOverblik() { // Her skal vi have en oversigt over alle ordrer til vores admin side
   const [allOrders, setAllOrders] = useState([]);
 
   useEffect(() => {
     // Opret en reference til Bestillinger-samlingen
-    const ordre = db.collection("Bestillinger").onSnapshot((snapshot) => {
+    const ordre = db.collection("Bestillinger").onSnapshot((snapshot) => { 
       const data = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
-      setAllOrders(data);
+      setAllOrders(data); 
     });
 
     return () => ordre();
   }, []);
 
-  console.log(allOrders);
+  console.log(allOrders); 
 
   return (
     <div>
