@@ -19,7 +19,7 @@ function App() {
     <Router>
    
       <Routes>
-        <Route path="/" element={<ForsidePage/>}/>
+        <Route path="/" element={<LoginPage/>}/>
         <Route path="/LoginPage" element={<LoginPage/>}/>
         <Route path="/BookRoom" element={<BookRoom/>} />
         <Route path="/bookSelskab" element={<BookSelskab/>} />
