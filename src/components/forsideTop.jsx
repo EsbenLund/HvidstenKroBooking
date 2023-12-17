@@ -8,7 +8,7 @@ export default function ForsideTop() {
     }
     return(
         <nav style={forsideNav}>
-        <img src={HvidstenTop}></img>
+        <img src={HvidstenTop} alt="hvidsten"></img>
         </nav>
     
     )

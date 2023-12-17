@@ -12,7 +12,7 @@ const footImg = {
 }
     return (
         <footer style={footerForside}>
-            <img style={footImg} src={footer}></img>
+            <img style={footImg} src={footer} alt="hvidsten"></img>
         </footer>
     )
 }
