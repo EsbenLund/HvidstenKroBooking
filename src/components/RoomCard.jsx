@@ -47,9 +47,10 @@ const RoomCard = ({ heading, price }) => {
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '4% 0' }}>
           <div>
-            <button className="book-button">
-            <Link to="/Order2">Book</Link>
-            </button>
+            
+        <Link to="/Order2" className="book-button">
+            <button>Book</button>
+        </Link>
             <p className="Card-text" onClick={openModal} style={{ cursor: 'pointer' }}>Læs mere</p>
           </div>
           <div style={{ display: 'flex', gap: '10%', alignItems: 'center', marginBottom: '10px' }}>
@@ -88,9 +89,9 @@ const RoomCard = ({ heading, price }) => {
               </div>
             </div>
             <div className="modal-footer">
-              <button className="book-button">
-              <Link to="/Order2">Book</Link>
-              </button>
+            <Link to="/Order2" className="book-button">
+              <button>Book</button>
+            </Link>
             </div>
           </div>
         </div>
