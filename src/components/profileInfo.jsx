@@ -7,18 +7,18 @@ export default function ProfileBox () {
 
   useEffect(() => {
     // Hent eksisterende profiloplysninger ved indlæsning af komponenten
-    const storedAddress = localStorage.getItem('address');
+    const storedAddress = localStorage.getItem('address'); // Hent oplysninger fra Local Storage
     const storedMobile = localStorage.getItem('mobile');
     const storedName = localStorage.getItem('name');
 
-    if (storedAddress) setAddress(storedAddress);
+    if (storedAddress) setAddress(storedAddress); // Opdater state med oplysningerne
     if (storedMobile) setMobile(storedMobile);
     if (storedName) setName(storedName);
   }, []);
 
   const saveProfile = () => {
     // Gem profiloplysningerne i Local Storage
-    localStorage.setItem('address', address);
+    localStorage.setItem('address', address); // Gem oplysningerne i Local Storage
     localStorage.setItem('mobile', mobile);
     localStorage.setItem('name', name);
 

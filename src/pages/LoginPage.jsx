@@ -1,3 +1,5 @@
+import Background from "../components/Background";
+import BackgroundAdmin from "../components/backgroundAdmin";
 import SignIn from "../components/google/signIn"
 import { useNavigate } from 'react-router-dom';
 export default function LoginPage() {
@@ -18,6 +20,7 @@ export default function LoginPage() {
 
     return (
         <>
+        <BackgroundAdmin />
         <SignIn />
         <button  style={adminBtn} onClick={go2admin}>Admin Login</button>
         <p className="text-center text-black">Kun for medarbejdere</p>

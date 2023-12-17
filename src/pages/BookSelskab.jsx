@@ -1,7 +1,7 @@
 
 
 import Background from '../components/Background';
-import CompanySelector from '../components/CompanySelector';
+import EventSelector from '../components/EventSelector';
 
 export default function BookSelskab() {
     return (
@@ -17,7 +17,7 @@ export default function BookSelskab() {
 
     <div>
       
-      <CompanySelector />
+      <EventSelector />
       
     </div>
 

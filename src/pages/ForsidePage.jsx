@@ -18,6 +18,7 @@ export default function ForsidePage() {
   
     return (
         <>
+         <ProfilLink />
         <div className="min-h-screen">
         <ForsideTop />
          <Navbar />

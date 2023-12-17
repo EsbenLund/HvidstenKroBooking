@@ -3,15 +3,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const CompanySelector = () => {
-  const [selectedCompany, setSelectedCompany] = useState('');
+const EventSelector = () => {
+  const [selectedEvent, setSelectedEvent] = useState('');
   const [showMenu, setShowMenu] = useState(false);
-  const availableCompanies = ['Fødselsdag', 'Julefrokost', 'Andre Selskaber'];
+  const availableEvents = ['Fødselsdag', 'Julefrokost', 'Andre Selskaber'];
 
   useEffect(() => {
-    const storedCompany = localStorage.getItem('selectedCompany');
-    if (storedCompany) {
-      setSelectedCompany(storedCompany);
+    const storedEvent = localStorage.getItem('selectedEvent');
+    if (storedEvent) {
+      setSelectedEvent(storedEvent);
     }
   }, []);
 
@@ -19,9 +19,9 @@ const CompanySelector = () => {
     setShowMenu(!showMenu);
   };
 
-  const handleSelectCompany = (company) => {
-    setSelectedCompany(company);
-    localStorage.setItem('selectedCompany', company);
+  const handleSelectEvent = (event) => {
+    setSelectedEvent(event);
+    localStorage.setItem('selectedEvent', event);
     setShowMenu(false);
   };
 
@@ -39,7 +39,7 @@ const CompanySelector = () => {
           </div>
           <div style={{ padding: '5px', display: 'flex', alignItems: 'center', position: 'relative' }}>
             <div onClick={toggleMenu} style={{ cursor: 'pointer' }}>
-              {selectedCompany ? selectedCompany : 'Vælg'} &#9662;
+              {selectedEvent ? selectedEvent : 'Vælg'} &#9662;
             </div>
             {showMenu && (
               <ul
@@ -55,15 +55,15 @@ const CompanySelector = () => {
                   cursor: 'pointer',
                 }}
               >
-                {availableCompanies.map((company, index) => (
+                {availableEvents.map((event, index) => (
                   <li
                     key={index}
-                    onClick={() => handleSelectCompany(company)}
+                    onClick={() => handleSelectEvent(event)}
                     style={{ padding: '5px', transition: 'background-color 0.3s', borderBottom: '1px solid #F2C960' }}
                     onMouseEnter={(e) => e.target.style.backgroundColor = '#F2C960'}
                     onMouseLeave={(e) => e.target.style.backgroundColor = 'initial'}
                   >
-                    {company}
+                    {event}
                   </li>
                 ))}
               </ul>
@@ -80,6 +80,6 @@ const CompanySelector = () => {
   );
 };
 
-export default CompanySelector;
+export default EventSelector;
 
 
