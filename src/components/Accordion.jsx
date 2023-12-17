@@ -121,8 +121,6 @@ function Accordion({ items, onComplete, userData }) {
   }, []);
 
   const handleSectionColorChange = (index) => {
-    // Kommenter eller fjern denne linje for at forhindre farveskift
-    // document.getElementById(`section-title-${index}`).style.color = 'green';
   
     if (index === 3 && !isLocked[3]) {
       history.push('/receipt');
@@ -135,7 +133,6 @@ function Accordion({ items, onComplete, userData }) {
       case 0:
         return !isUnlock2Disabled;
       case 1:
-        // Tilføj logik her for at kontrollere, om sektion 1 er udfyldt
         return true;
       case 2:
         return !!inputTime;
