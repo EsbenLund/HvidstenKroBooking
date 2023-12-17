@@ -1,29 +1,35 @@
 import React from 'react';
-import { auth } from './config'
+import { auth } from './config';
 import { useNavigate } from 'react-router-dom';
-export default function LogOut() {
-    const navigate = useNavigate(); // bruges til at navigere til en anden side 
 
-    const handleLogout = async () => { // funktionen der logger brugeren ud
-        try { 
-            await auth.signOut(); // logger brugeren ud
-            navigate("/ForsidePage"); // sender brugeren tilbage til forsiden
-        } catch (error) { 
+export default function LogOut() {
+    const navigate = useNavigate(); // Bruges til at navigere til en anden side
+
+    const handleLogout = async () => {
+        try {
+            await auth.signOut(); // Logger brugeren ud
+            navigate("/ForsidePage"); // Sender brugeren tilbage til forsiden
+        } catch (error) {
             console.log(error);
         }
-
     };
+
     const logUdBtn = {
         position: 'absolute',
         top: '15px',
         left: '10px',
-        backgroundColor: '#653535',
-    
-    }
+        color: 'black',
+        backgroundColor: '#F2C960',
+        padding: '5px',
+        borderRadius: '4px',
+        display: auth.currentUser ? 'block' : 'none', // Skjuler knappen, hvis der er en aktuel bruger
+    };
 
-    return(
+    return (
         <div className="text-white">
-        <button style={logUdBtn} onClick={handleLogout}>Log ud</button>
+            <button style={logUdBtn} onClick={handleLogout}>
+                Log ud
+            </button>
         </div>
-    )
+    );
 }
