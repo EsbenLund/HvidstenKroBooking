@@ -23,6 +23,7 @@ function Accordion({ items, onComplete, userData }) {
   const [emailValue, setEmailValue] = useState('');
   const [phoneValue, setPhoneValue] = useState('');
   const [inputTime, setInputTime] = useState('');
+  const [savedDate, setSavedDate] = useState('');
   const [inputDate, setInputDate] = useState(getCurrentDate());
   const [menuChoice, setMenuChoice] = useState('');
   const [isUnlock2Disabled, setIsUnlock2Disabled] = useState(isUnlock2DisabledInitialValue);
@@ -119,13 +120,7 @@ function Accordion({ items, onComplete, userData }) {
       <option key={index} value={option}>{option}</option>
     ));
   };
-
-  useEffect(() => {
-    // Hvis userData (fra Order1) indeholder en e-mail, sæt den i emailValue
-    if (userData && userData.emailValue) {
-      setEmailValue(userData.emailValue);
-    }
-  }, [userData]);
+  
   useEffect(() => {
     setSavedDate(inputDate);
   }, []);

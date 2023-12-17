@@ -35,7 +35,14 @@ export default function AdminOverblik() {
       unsubscribe();
     };
   }, []);
-
+  const changeOrderColor = (orderId, color) => {
+    setAllOrders(allOrders.map(order => {
+      if (order.id === orderId) {
+        return { ...order, color };
+      }
+      return order;
+    }));
+  };
   return (
     <>
     <div className="w-full flex items-center justify-center mb-24">
@@ -43,19 +50,18 @@ export default function AdminOverblik() {
       <h1 className="text-center ">Admin Ordre Oversigt</h1>
       <p className="text-center">Overblik over indkommende bestillinger</p>
       {allOrders.map((order) => (
-        <div className="flex flex-col w-full bg-[#1E1E1E] rounded-lg text-white p-2" key={order.id}>
+   <div key={order.id} className="flex flex-col w-full rounded-lg text-white p-2" style={{ backgroundColor: order.color || '#1E1E1E' }}>
           <p>Type: {order.type}</p>
           <p>Navn: {order.nameValue}</p>
           <p>Email: {order.emailValue}</p>
           <p>Dato: {order.inputDate}</p>
           <p>Antal Personer: {order.inputValue}</p>
           <p>Mobil-nr: {order.phoneValue}</p>
-          <button
-            className="bg-white text-black rounded"
-            onClick={() => deleteOrder(order.id)}
-          >
-            Slet Bestilling
-          </button>
+          <div className="flex gap-2">
+              <button className="bg-white text-black rounded" onClick={() => changeOrderColor(order.id, 'green')}>Marker som Godkendt</button>
+              <button className="bg-white text-black rounded" onClick={() => changeOrderColor(order.id, 'red')}>Marker som Afvist</button>
+              <button className="bg-white text-black rounded" onClick={() => deleteOrder(order.id)}>Slet Bestilling</button>
+            </div>
         </div>
       ))}
     </div>

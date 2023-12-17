@@ -4,7 +4,7 @@ import Accordion from '../components/Accordion2';
 import Kvitering from '../components/Kvitering2';
 import Background from '../components/Background';
 import { CSSTransition } from 'react-transition-group';
-import { db } from '../components/google/config'; 
+import { auth, db } from '../components/google/config'; 
 
 function Order2() {
   const [showAccordion, setShowAccordion] = useState(true);
@@ -88,7 +88,6 @@ function Order2() {
     <div>
 
       <Background />
-      <CurrentUser />
       <div className="App">
       <CSSTransition
   in={showAccordion}
