@@ -25,7 +25,9 @@ export default function CurrentUser() {
             ) : (
                 <div className="text-center w-2/3 justify-center mx-auto">
                     <p >Ingen bruger logget ind</p>
+                    <button className="bg-[#F2C960] rounded text-black mt-2 w-1/4 p-2">
                     <Link to="/LoginPage">Log In</Link>
+                    </button>
                     
                 </div>
             )}

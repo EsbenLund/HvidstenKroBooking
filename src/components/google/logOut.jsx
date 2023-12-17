@@ -17,6 +17,7 @@ export default function LogOut() {
         position: 'absolute',
         top: '15px',
         left: '10px',
+        backgroundColor: '#653535',
     
     }
 
