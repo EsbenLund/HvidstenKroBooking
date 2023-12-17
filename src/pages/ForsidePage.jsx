@@ -2,7 +2,6 @@ import FpCard from "../components/fpCard"
 import bord from "../assets/bord.png"
 import selskab from "../assets/selskab.png"
 import værelse from "../assets/værelse.png"
-import Navbar from "../components/navbarForside"
 import ForsideTop from "../components/forsideTop"
 import ForsideBund from "../components/forsideBund"
 import ProfilLink from "../components/profilLink"
@@ -22,7 +21,6 @@ export default function ForsidePage() {
          <ProfilLink />
         <div className="min-h-screen">
         <ForsideTop />
-         <Navbar />
          <h1 className="text-center text-[#653535] font-bold text-lg">Book Vores Faciliteter</h1>
          <section className="text-center text-black m-2">
             <p className="snavret-tekst">Oplev vores traditionelle kro og book nemt din næste oplevelse hos os! 
