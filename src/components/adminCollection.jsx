@@ -55,6 +55,9 @@ export default function AdminOverblik() {
           <p>Navn: {order.nameValue}</p>
           <p>Email: {order.emailValue}</p>
           <p>Dato: {order.inputDate}</p>
+          <p>Check ud: {order.extraInputDate}</p>
+          <p>Menu: {order.menuChoice}</p>
+          <p>Tid: {order.inputTime}</p>
           <p>Antal Personer: {order.inputValue}</p>
           <p>Mobil-nr: {order.phoneValue}</p>
           <div className="flex gap-2">

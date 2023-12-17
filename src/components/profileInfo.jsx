@@ -39,7 +39,7 @@ export default function ProfileBox () {
         </div>
         <div className="w-1/2">
           <input
-            className="text-end border-2 border-black rounded p-1 w-full bg-transparent"
+            className=" border-2 border-black rounded p-1 w-full bg-transparent"
             type="text"
             id="name"
             placeholder="Indtast Navn"
@@ -56,7 +56,7 @@ export default function ProfileBox () {
         </div>
         <div className="w-1/2">
           <input
-            className="text-end border-2 border-black rounded p-1 w-full bg-transparent"
+            className=" border-2 border-black rounded p-1 w-full bg-transparent"
             type="text"
             placeholder="Indtast Adresse"
             id="address"
@@ -73,7 +73,7 @@ export default function ProfileBox () {
         </div>
         <div className="w-1/2">
           <input
-            className="text-end border-2 border-black rounded p-1 w-full bg-transparent"
+            className=" border-2 border-black rounded p-1 w-full bg-transparent"
             type="text"
             placeholder="Indtast Mobilnummer"
             id="mobile"

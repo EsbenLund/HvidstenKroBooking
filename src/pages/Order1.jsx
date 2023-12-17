@@ -12,7 +12,7 @@ function Order1() {
   const [showAccordion, setShowAccordion] = useState(true);
   const [showKvitering, setShowKvitering] = useState(false);
   const [isBookingSent, setIsBookingSent] = useState(false);
-
+  const [currentUser, setCurrentUser] = useState(null); // Definer currentUser uden for useEffect
   const [accordionValues, setAccordionValues] = useState({
     inputValue: '',
     nameValue: '',
@@ -34,6 +34,16 @@ function Order1() {
 
 
   useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  useEffect(() => {
     if (isBookingSent || !accordionValues || Object.values(accordionValues).some(value => !value)) {
       return;
     }
@@ -41,31 +51,37 @@ function Order1() {
     const currentUser = auth.currentUser;
   
     const sendBookingToFirestore = async () => {
-      if (currentUser) {
-        const uniqueBookingId = `bestilling_${Date.now()}`;
-        const bookingData = {
-          ...accordionValues,
-          type: "Bord"
-        };
-  
-        const bookingDocRef = doc(db, "Bestillinger", uniqueBookingId);
-        const userDocRef = doc(db, 'users', currentUser.uid);
-  
-        try {
-          await setDoc(bookingDocRef, bookingData); // Gem i generelle bestillinger
+      const uniqueBookingId = `bestilling_${Date.now()}`;
+      const bookingData = {
+        ...accordionValues,
+        type: "Event"
+      };
+    
+      const bookingDocRef = doc(db, "Bestillinger", uniqueBookingId);
+    
+      try {
+        await setDoc(bookingDocRef, bookingData); // Gem i generelle bestillinger
+        console.log("Booking gemt i Firestore med ID:", uniqueBookingId);
+    
+        // Håndter brugerens personlige optegnelser, hvis logget ind
+        if (currentUser) {
+          const userDocRef = doc(db, 'users', currentUser.uid);
           await updateDoc(userDocRef, { 
             bestillinger: arrayUnion(bookingData) // Opdater brugerens bestillinger
           });
-          console.log("Booking gemt i Firestore med ID:", uniqueBookingId);
-          setIsBookingSent(true);
-        } catch (error) {
-          console.error("Fejl ved oprettelse af booking:", error);
+          console.log("Brugerens personlige booking optegnelser opdateret.");
+        } else {
+          console.log("Ingen bruger logget ind, så ingen personlig booking opdatering.");
         }
+    
+        setIsBookingSent(true);
+      } catch (error) {
+        console.error("Fejl ved oprettelse eller opdatering af booking:", error);
       }
     };
-  
     sendBookingToFirestore();
   }, [accordionValues, isBookingSent]);
+
 
   const handleAccordionComplete = (values) => {
     setAccordionValues(values);

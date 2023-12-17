@@ -9,7 +9,7 @@ export default function SignIn() {
     const signInWithGoogle = () => { // funktion til at logge ind med google
         signInWithPopup(auth, provider) // åbner et popup vindue med google login
             .then((result) => { 
-                navigate('/ForsidePage');
+                navigate('/ProfilePage');
                 console.log(result);
                 addUser2Db({ // tilføjer bruger til databasen med de data vi får fra google
                     name: result.user.displayName,

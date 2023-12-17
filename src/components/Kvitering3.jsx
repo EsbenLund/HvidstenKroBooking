@@ -7,7 +7,7 @@ function formatDate(date) {
   }
 
 function Kvitering({ values }) {
-    console.log(values);
+    
     if (!values) {
       return <div>Loading...</div>;
       

@@ -22,7 +22,7 @@ export default function ProfilLink() {
     return (
         <>
             <Link to="/ProfilePage">
-                <FontAwesomeIcon className="" style={profilStyle} icon={faUser} />
+                <FontAwesomeIcon style={profilStyle} icon={faUser} />
                 <p style={profilP}>Min Profil</p>
             </Link>
         </>

@@ -1,4 +1,4 @@
-import Background from '../components/Background';
+import BackgroundProfile from '../components/backgroundProfile';
 import CurrentUser from '../components/currentUser';
 import LogOut from '../components/google/logOut';
 import ProfileBox from '../components/profileInfo';
@@ -8,7 +8,7 @@ export default function ProfilePage() {
 
     return(
         <>
-        <Background />
+        <BackgroundProfile />
         <LogOut />
         <CurrentUser />
         <ProfileBox />

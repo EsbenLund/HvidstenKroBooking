@@ -18,9 +18,9 @@ function App() {
     
     <Router>
       <Routes>
-        <Route path="/" element={<ForsidePage/>}/>
-        <Route path="/LoginPage" element={<LoginPage/>}/>
+      <Route path="/" element={<ForsidePage/>}/>
         <Route path="/ForsidePage" element={<ForsidePage/>}/>
+        <Route path="/LoginPage" element={<LoginPage/>}/>
         <Route path="/BookRoom" element={<BookRoom/>} />
         <Route path="/bookSelskab" element={<BookSelskab/>} />
         <Route path="/ProfilePage" element={<ProfilePage/>}/>
@@ -29,7 +29,6 @@ function App() {
         <Route path="/Order1" element={<Order1/>}/>
         <Route path="/Order2" element={<Order2/>}/>
         <Route path="/Order3" element={<Order3/>}/>
-        
       </Routes>
     </Router>
     </>

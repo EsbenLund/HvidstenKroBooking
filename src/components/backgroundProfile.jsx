@@ -42,7 +42,7 @@ const imgStyle = {
   cursor: 'pointer',
 };
 
-export default function Background() {
+export default function BackgroundProfile() {
   
   return (
     <section>
@@ -51,7 +51,7 @@ export default function Background() {
       </div>
       
       <div className="logonarrow" style={rowStyle}>
-      <Link to="#" onClick={() => window.history.back()}>
+      <Link to="/">
       <img className="arrow-kro" src={arrow} alt="Go back arrow" style={imgStyle} />
       </Link>
 

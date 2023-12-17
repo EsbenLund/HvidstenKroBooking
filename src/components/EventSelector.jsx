@@ -3,13 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const EventSelector = () => {
+const EventSelector = () => { 
   const [selectedEvent, setSelectedEvent] = useState('');
   const [showMenu, setShowMenu] = useState(false);
-  const availableEvents = ['Fødselsdag', 'Julefrokost', 'Andre Selskaber'];
+  const availableEvents = ['Fødselsdag', 'Julefrokost', 'Andre Selskaber']; // Værdierne der kan vælges
 
   useEffect(() => {
-    const storedEvent = localStorage.getItem('selectedEvent');
+    const storedEvent = localStorage.getItem('selectedEvent'); // Henter værdien fra local storage
     if (storedEvent) {
       setSelectedEvent(storedEvent);
     }
@@ -19,7 +19,7 @@ const EventSelector = () => {
     setShowMenu(!showMenu);
   };
 
-  const handleSelectEvent = (event) => {
+  const handleSelectEvent = (event) => { // event er den værdi der bliver valgt
     setSelectedEvent(event);
     localStorage.setItem('selectedEvent', event);
     setShowMenu(false);

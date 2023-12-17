@@ -51,10 +51,13 @@ export default function Uorder() {
       setUserOrders((prevOrders) =>
         prevOrders.filter((existingOrdre) => existingOrdre.id !== ordre.id)
       );
+
+      // Genindlæs siden efter sletning af bestilling
+      location.reload();
     } catch (error) {
       console.error("Fejl ved sletning af bestilling:", error);
     }
-  };
+};
 
   
 
@@ -66,7 +69,10 @@ export default function Uorder() {
           <div key={ordre.id} className="flex flex-col w-2/3 p-4 bg-white border-2 border-black rounded mt-2">
             <p className="mb-2">Type: {ordre.type}</p>
             <p className="mb-2">Dato: {ordre.inputDate}</p>
+            <p className="mb-2">Check ud: {ordre.extraInputDate}</p>
+            <p className="mb-2">Tid: {ordre.inputTime}</p>
             <p className="mb-2">Antal Personer: {ordre.inputValue}</p>
+            <p className="mb-2">Menu: {ordre.menuChoice}</p>
             <button className="bg-[#F2C960] w-1/3 text-black rounded p-1" onClick={() => deleteOrdre(ordre)}>
               Slet Bestilling
             </button>
