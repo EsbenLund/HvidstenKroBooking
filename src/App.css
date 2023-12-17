@@ -52,12 +52,15 @@ html{
   .Card-text {
     color: white;
     text-align: start;
+    
   }
   
   .Card-heading {
     font-size: 18px;
     
   }
+
+
   
   /*--- Modal ---*/
   
@@ -242,3 +245,17 @@ html{
 }
   
   }
+  .custom-button {
+    background-color: #F2C960; /* Standard baggrundsfarve */
+    color: #060000; /* Standard tekstfarve */
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2); /* Boks-skygge */
+    transition: background-color 0.3s; /* Overgangseffekt for baggrundsfarve */
+  }
+  
+  .custom-button:hover {
+    background-color: #D69E10; /* Farveændring ved hover */
+  }
+

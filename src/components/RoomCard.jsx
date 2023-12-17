@@ -49,7 +49,7 @@ const RoomCard = ({ heading, price }) => {
           <div>
             
         <Link to="/Order2" className="book-button">
-            <button>Book</button>
+            <button className="mb-2">Book</button>
         </Link>
             <p className="Card-text" onClick={openModal} style={{ cursor: 'pointer' }}>Læs mere</p>
           </div>

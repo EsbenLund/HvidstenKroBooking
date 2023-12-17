@@ -21,7 +21,7 @@ export default function ForsidePage() {
          <ProfilLink />
         <div className="min-h-screen">
         <ForsideTop />
-         <h1 className="text-center text-[#653535] font-bold text-lg">Book Vores Faciliteter</h1>
+         <h1 className=" mt-10 text-center text-[#653535] font-bold text-lg">Book Vores Faciliteter</h1>
          <section className="text-center text-black m-2">
             <p className="snavret-tekst">Oplev vores traditionelle kro og book nemt din næste oplevelse hos os! 
             Uanset om du ønsker at reservere et bord til vores lækre <em style={emStyle}>madoplevelser</em> eller sikre dig en overnatning i vores <em style={emStyle}>hyggelige værelser</em>,
@@ -35,8 +35,7 @@ export default function ForsidePage() {
          <Link to="/Order1"><FpCard img={bord} title="Book Et Bord" /></Link>
          <Link to="/BookSelskab"><FpCard img={selskab} title="Book Et Selskab" /></Link>
         </div>
-        <AdminLink />
-      
+
         
         </div>
         <div>

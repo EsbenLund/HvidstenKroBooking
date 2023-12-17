@@ -102,22 +102,27 @@ function Accordion({ items, onComplete, userData }) {
 
   const handleDateChange = (e, inputType) => {
     const selectedDate = e.target.value;
-
+  
     if (inputType === 'inputDate') {
       setInputDate(selectedDate);
-      // Opdater extraInputDate, hvis den er tidligere end dagen efter inputDate
-      const nextDay = new Date(selectedDate);
-      nextDay.setDate(nextDay.getDate() + 1);
-      if (!extraInputDate || new Date(extraInputDate) < nextDay) {
+  
+      // Sikrer, at extraInputDate ikke er før inputDate
+      if (new Date(extraInputDate) < new Date(selectedDate)) {
+        const nextDay = new Date(selectedDate);
+        nextDay.setDate(nextDay.getDate() + 1);
         setExtraInputDate(nextDay.toISOString().split('T')[0]);
       }
-    } else if (inputType === 'extraInput') {
+    } else if (inputType === 'extraInputDate') {
+      // Sikrer, at extraInputDate er mindst én dag efter inputDate
+      if (new Date(selectedDate) <= new Date(inputDate)) {
+        alert("Check-ud-dato skal være mindst én dag efter check-in-dato.");
+        return;
+      }
       setExtraInputDate(selectedDate);
     }
-
+  
     setCalculatedPrice(calculatePrice());
   };
-
   useEffect(() => {
     setCalculatedPrice(calculatePrice());
   }, [inputDate, extraInputDate]);
@@ -139,7 +144,12 @@ function Accordion({ items, onComplete, userData }) {
   };
 
   
-
+  useEffect(() => {
+    // Hvis userData (fra Order1) indeholder en e-mail, sæt den i emailValue
+    if (userData && userData.emailValue) {
+      setEmailValue(userData.emailValue);
+    }
+  }, [userData]);
   
 
   const handleSectionColorChange = (index) => {
