@@ -1,13 +1,11 @@
-
-
-
-
 import Phones from "../assets/NoPhones.png";
 import Smoke from "../assets/NoSmoking.png";
 import Animal from "../assets/NoAnimals.png";
 import Room from "../assets/roompicture.png";
 import React, { useState } from 'react';
 import Line from "../assets/linehvidsten.png";
+import { Link } from "react-router-dom";
+
 
 const RoomCard = ({ heading, price }) => {
   const [showModal, setShowModal] = useState(false);
@@ -18,13 +16,6 @@ const RoomCard = ({ heading, price }) => {
 
   const closeModal = () => {
     setShowModal(false);
-  };
-
-  const handleBooking = () => {
-    // Handling for booking...
-    // F.eks. omdirigering til bookingsiden eller udførelse af en bestemt handling
-    // Eksempel:
-    window.location.href = '/bookingside'; // Ændr denne linje til den ønskede bookinghåndtering
   };
 
   return (
@@ -56,8 +47,8 @@ const RoomCard = ({ heading, price }) => {
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '4% 0' }}>
           <div>
-            <button className="book-button" onClick={handleBooking}>
-              Book
+            <button className="book-button">
+            <Link to="/Order2">Book</Link>
             </button>
             <p className="Card-text" onClick={openModal} style={{ cursor: 'pointer' }}>Læs mere</p>
           </div>
@@ -97,8 +88,8 @@ const RoomCard = ({ heading, price }) => {
               </div>
             </div>
             <div className="modal-footer">
-              <button className="book-button" onClick={handleBooking}>
-                Book
+              <button className="book-button">
+              <Link to="/Order2">Book</Link>
               </button>
             </div>
           </div>

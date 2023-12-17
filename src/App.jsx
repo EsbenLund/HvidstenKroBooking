@@ -11,6 +11,7 @@ import Order3 from './pages/Order3';
 import BookSelskab from './pages/BookSelskab';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
+
 function App() {
   return (
     <>
@@ -21,7 +22,7 @@ function App() {
         <Route path="/" element={<LoginPage/>}/>
         <Route path="/ForsidePage" element={<ForsidePage/>}/>
         <Route path="/BookRoom" element={<BookRoom/>} />
-        <Route path="/bookselskab" element={<BookSelskab/>} />
+        <Route path="/bookSelskab" element={<BookSelskab/>} />
         <Route path="/ProfilePage" element={<ProfilePage/>}/>
         <Route path="/AdminLoginPage" element={<AdminLoginPage/>}/>
         <Route path="/AdminPage" element={<AdminPage/>}/>

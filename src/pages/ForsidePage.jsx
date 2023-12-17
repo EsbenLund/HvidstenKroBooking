@@ -7,6 +7,7 @@ import ForsideTop from "../components/forsideTop"
 import ForsideBund from "../components/forsideBund"
 import ProfilLink from "../components/profilLink"
 import { Link } from "react-router-dom"
+import AdminLink from "../components/adminLink"
 
 
 
@@ -33,9 +34,10 @@ export default function ForsidePage() {
          </section>
          <div className="flex flex-wrap justify-center gap-4">
          <Link to="/BookRoom"><FpCard img={værelse} title="Book Et Værelse"/></Link>
-         <Link to="/BookBord"><FpCard img={bord} title="Book Et Bord" /></Link>
+         <Link to="/Order1"><FpCard img={bord} title="Book Et Bord" /></Link>
          <Link to="/BookSelskab"><FpCard img={selskab} title="Book Et Selskab" /></Link>
         </div>
+        <AdminLink />
       
         
         </div>

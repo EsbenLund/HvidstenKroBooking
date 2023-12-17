@@ -6,7 +6,7 @@ export default function Navbar() {
         <div className="flex justify-evenly text-black flex-row w-full">  
           <Link to="/ForsidePage">Forside</Link>
           <Link to="/BookRoom">Book et værelse</Link>
-          <Link to="/">Book et bord</Link>
+          <Link to="/Order1">Book et bord</Link>
           <Link to="/bookselskab">Book et selskab</Link>
         </div>
       </nav>

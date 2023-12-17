@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, updateDoc, arrayUnion } from "firebase/firestore";
 import Accordion from '../components/Accordion';
 import Kvitering from '../components/Kvitering';
 import Background from '../components/Background';
 import { CSSTransition } from 'react-transition-group';
-import { db } from '../components/google/config'; 
+import { auth, db } from '../components/google/config'; 
+
+
 
 function Order1() {
   const [showAccordion, setShowAccordion] = useState(true);
@@ -21,25 +23,47 @@ function Order1() {
   });
 
   useEffect(() => {
+    const currentUser = auth.currentUser;
+    if (currentUser) {
+      setAccordionValues((prevValues) => ({
+        ...prevValues,
+        emailValue: currentUser.email // Sætter brugerens e-mail
+      }));
+    }
+  }, []);
+
+
+  useEffect(() => {
     if (isBookingSent || !accordionValues || Object.values(accordionValues).some(value => !value)) {
       return;
     }
-
+  
+    const currentUser = auth.currentUser;
+  
     const sendBookingToFirestore = async () => {
-      const uniqueBookingId = `bestilling_${Date.now()}`;
-      const bookingDoc = doc(db, "BestillingerBord", uniqueBookingId);
-
-      // Tilføj "type" attribut til accordionValues
-      const bookingData = {
-        ...accordionValues,
-        type: "Bord"
-      };
-
-      await setDoc(bookingDoc, bookingData);
-      console.log("Booking gemt i Firestore med ID:", uniqueBookingId);
-      setIsBookingSent(true);
+      if (currentUser) {
+        const uniqueBookingId = `bestilling_${Date.now()}`;
+        const bookingData = {
+          ...accordionValues,
+          type: "Bord"
+        };
+  
+        const bookingDocRef = doc(db, "Bestillinger", uniqueBookingId);
+        const userDocRef = doc(db, 'users', currentUser.uid);
+  
+        try {
+          await setDoc(bookingDocRef, bookingData); // Gem i generelle bestillinger
+          await updateDoc(userDocRef, { 
+            bestillinger: arrayUnion(bookingData) // Opdater brugerens bestillinger
+          });
+          console.log("Booking gemt i Firestore med ID:", uniqueBookingId);
+          setIsBookingSent(true);
+        } catch (error) {
+          console.error("Fejl ved oprettelse af booking:", error);
+        }
+      }
     };
-
+  
     sendBookingToFirestore();
   }, [accordionValues, isBookingSent]);
 
@@ -75,7 +99,7 @@ function Order1() {
           unmountOnExit
           onExited={() => setShowKvitering(true)}
         >
-          <Accordion items={accordionItems} onComplete={handleAccordionComplete} />
+<Accordion items={accordionItems} onComplete={handleAccordionComplete} userData={accordionValues} />
         </CSSTransition>
 
         <CSSTransition

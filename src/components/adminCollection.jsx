@@ -1,10 +1,20 @@
-import { db } from "./google/config";
-import { getFirestore, collection, onSnapshot } from "firebase/firestore";
+import { getFirestore, collection, onSnapshot, deleteDoc, doc } from "firebase/firestore";
 import { useState, useEffect } from "react";
 
 export default function AdminOverblik() {
   const [allOrders, setAllOrders] = useState([]);
 
+  const deleteOrder = async (orderId) => {
+    const firestore = getFirestore();
+    const orderDocRef = doc(firestore, "Bestillinger", orderId);
+
+    try {
+      await deleteDoc(orderDocRef);
+      console.log("Bestilling slettet:", orderId);
+    } catch (error) {
+      console.error("Fejl ved sletning af bestilling:", error);
+    }
+  };
   useEffect(() => {
     const firestore = getFirestore();
 
@@ -28,7 +38,7 @@ export default function AdminOverblik() {
 
   return (
     <>
-    <div className="w-full flex items-center justify-center">
+    <div className="w-full flex items-center justify-center mb-24">
     <div className="flex flex-col w-2/3 gap-4">
       <h1 className="text-center ">Admin Ordre Oversigt</h1>
       <p className="text-center">Overblik over indkommende bestillinger</p>
@@ -40,7 +50,12 @@ export default function AdminOverblik() {
           <p>Dato: {order.inputDate}</p>
           <p>Antal Personer: {order.inputValue}</p>
           <p>Mobil-nr: {order.phoneValue}</p>
-          <button className="bg-white text-black rounded">Slet Bestilling</button>
+          <button
+            className="bg-white text-black rounded"
+            onClick={() => deleteOrder(order.id)}
+          >
+            Slet Bestilling
+          </button>
         </div>
       ))}
     </div>

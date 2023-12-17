@@ -3,7 +3,7 @@ import padlock from "../assets/padlock.png";
 import padunlock from "../assets/padunlock.png";
 import checkmark from "../assets/checkmark.png";
 
-function Accordion({ items, onComplete }) {
+function Accordion({ items, onComplete, userData }) {
   const getCurrentDate = () => {
     const today = new Date();
     const year = today.getFullYear();
@@ -212,7 +212,7 @@ function Accordion({ items, onComplete }) {
                     min={getCurrentDate()}
                     onChange={(e) => handleDateChange(e, 'inputDate')}
                     value={inputDate || getCurrentDate()}
-                    style={{ border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
+                    style={{ background: 'white', border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
                   />
 
                   <label htmlFor="extraInputDate">Check-ud: </label>
@@ -222,7 +222,7 @@ function Accordion({ items, onComplete }) {
                     onChange={(e) => handleDateChange(e, 'extraInputDate')}
                     value={extraInputDate || getCurrentDate()}
                     min={getMinDateForExtraInput()}
-                    style={{ border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
+                    style={{ background: 'white', border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
                   />
 
                   <button
@@ -262,7 +262,7 @@ function Accordion({ items, onComplete }) {
                     id="inputName"
                     value={nameValue}
                     onChange={handleNameChange}
-                    style={{ border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
+                    style={{ background: 'white', border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
                   />
                   <label htmlFor="inputEmail">Email: </label>
                   <input
@@ -270,7 +270,7 @@ function Accordion({ items, onComplete }) {
                     id="inputEmail"
                     value={emailValue}
                     onChange={handleEmailChange}
-                    style={{ border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
+                    style={{ background: 'white', border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
                   />
                   <label htmlFor="inputPhone">Telefonnr: </label>
                   <input
@@ -278,7 +278,7 @@ function Accordion({ items, onComplete }) {
                     id="inputPhone"
                     value={phoneValue}
                     onChange={handlePhoneChange}
-                    style={{ border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
+                    style={{ background: 'white', border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
                   />
                   <button
                     className="custom-button"

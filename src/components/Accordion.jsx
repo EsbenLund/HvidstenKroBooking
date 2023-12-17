@@ -3,7 +3,7 @@ import padlock from "../assets/padlock.png";
 import padunlock from "../assets/padunlock.png";
 import checkmark from "../assets/checkmark.png";
 
-function Accordion({ items, onComplete }) {
+function Accordion({ items, onComplete, userData }) {
   const getCurrentDate = () => {
     const today = new Date();
     const year = today.getFullYear();
@@ -45,6 +45,7 @@ function Accordion({ items, onComplete }) {
       handleUnlock(index);
     }
   };
+
 
   
   const handleUnlock = (index) => {
@@ -108,7 +109,12 @@ function Accordion({ items, onComplete }) {
     setSavedDate(selectedDate);
   };
 
- 
+  useEffect(() => {
+    // Hvis userData (fra Order1) indeholder en e-mail, sæt den i emailValue
+    if (userData && userData.emailValue) {
+      setEmailValue(userData.emailValue);
+    }
+  }, [userData]);
 
   useEffect(() => {
     setSavedDate(inputDate);
@@ -188,7 +194,7 @@ function Accordion({ items, onComplete }) {
                     id="inputNumber"
                     value={inputValue}
                     onChange={handleInputChange}
-                    style={{ border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
+                    style={{ background: 'white', border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
                   />
                   <button
                    className="custom-button"
@@ -215,14 +221,14 @@ function Accordion({ items, onComplete }) {
                     min={getCurrentDate()}
                     onChange={handleDateChange}
                     value={inputDate || getCurrentDate()}
-                    style={{ border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
+                    style={{ background: 'white', border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
                   />
                   <label htmlFor="inputTime">Vælg klokkeslæt: </label>
                   <select
                     id="inputTime"
                     value={inputTime}
                     onChange={(e) => setInputTime(e.target.value)}
-                    style={{ border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
+                    style={{ background: 'white', border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
                   >
                     <option value="" disabled>
                       Vælg tidspunkt
@@ -251,7 +257,7 @@ function Accordion({ items, onComplete }) {
                     id="inputName"
                     value={nameValue}
                     onChange={handleNameChange}
-                    style={{ border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
+                    style={{ background: 'white', border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
                   />
                   <label htmlFor="inputEmail">Email: </label>
                   <input
@@ -259,7 +265,7 @@ function Accordion({ items, onComplete }) {
                     id="inputEmail"
                     value={emailValue}
                     onChange={handleEmailChange}
-                    style={{ border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
+                    style={{ background: 'white', border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
                   />
                   <label htmlFor="inputPhone">Telefonnr: </label>
                   <input
@@ -267,7 +273,7 @@ function Accordion({ items, onComplete }) {
                     id="inputPhone"
                     value={phoneValue}
                     onChange={handlePhoneChange}
-                    style={{ border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
+                    style={{ background: 'white', border: '1px solid #ccc', padding: '5px', marginBottom: '8px' }}
                   />
                   <button
                     className="custom-button"

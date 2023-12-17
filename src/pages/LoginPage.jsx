@@ -1,4 +1,3 @@
-import Background from "../components/Background";
 import BackgroundAdmin from "../components/backgroundAdmin";
 import SignIn from "../components/google/signIn"
 import { useNavigate } from 'react-router-dom';

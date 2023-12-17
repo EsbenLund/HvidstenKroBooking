@@ -16,6 +16,7 @@ export default function SignIn() {
                     email: result.user.email,
                     photoURL: result.user.photoURL,
                     uid: result.user.uid,
+                    bestillinger: [],
                 });
             })
             .catch((error) => {

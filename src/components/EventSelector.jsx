@@ -72,7 +72,7 @@ const EventSelector = () => {
         </div>
       </div>
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
-        <Link to="/næste-sti">
+        <Link to="/Order3">
           <button onClick={handleNext} style={{ padding: '10px 20px', backgroundColor: '#F2C960', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Næste</button>
         </Link>
       </div>

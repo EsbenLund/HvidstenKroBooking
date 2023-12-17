@@ -19,8 +19,7 @@ export default function CurrentUser() {
         <div className="text-black flex w-full ">
             {currentUser ? (
                 <div className="text-center w-2/3 justify-center mx-auto">
-                    <h1>Velkommen, {currentUser.displayName}!</h1>
-                    <p>Email: {currentUser.email}</p>
+                    <h1>Velkommen, {currentUser.email}!</h1>
                 </div>
             ) : (
                 <p>Ingen bruger logget ind</p>

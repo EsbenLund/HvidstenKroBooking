@@ -1,5 +1,3 @@
-
-
 import Background from '../components/Background';
 import EventSelector from '../components/EventSelector';
 

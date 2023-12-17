@@ -1,10 +1,9 @@
-
-
 import header from "../assets/header.png";
 import footer from "../assets/footersten.png";
 import logo from "../assets/krologo.png";
 import arrow from "../assets/goback.png";
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const sectionStyleHeader = {
   backgroundImage: `url(${header})`,
@@ -46,13 +45,13 @@ export default function Background() {
   return (
     <section>
       <div style={sectionStyleHeader}>
-        {/* Headerindhold her */}
+       
       </div>
       
       <div className="logonarrow" style={rowStyle}>
-        <a href="/">
-        <img className="arrow-kro" src={arrow} alt="Go back arrow" style={imgStyle} />
-        </a>
+      <Link to="#" onClick={() => window.history.back()}>
+      <img className="arrow-kro" src={arrow} alt="Go back arrow" style={imgStyle} />
+      </Link>
 
         
         <img className="logo-kro" src={logo} alt="Kro Logo" style={imgStyle} />
@@ -60,11 +59,11 @@ export default function Background() {
       </div>
       
       <div style={{ flexGrow: 1 }}>
-        {/* Eventuelt indhold mellem header og footer */}
+      
       </div>
       
       <div style={sectionStyleFooter}>
-        {/* Footerindhold her */}
+      
       </div>
     </section>
   );
