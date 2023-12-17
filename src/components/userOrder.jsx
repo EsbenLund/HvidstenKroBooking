@@ -40,24 +40,17 @@ export default function Uorder() {
     return unsubscribe;
   }, []);
 
-  const deleteOrdre = async (ordreId) => {
+  const deleteOrdre = async (ordre) => {
     try {
       const userDocRef = doc(db, 'users', auth.currentUser.uid);
-  
-      const userDocSnap = await getDoc(userDocRef);
-      if (userDocSnap.exists()) {
-        const currentOrders = userDocSnap.data().bestillinger || [];
-        const updatedOrders = currentOrders.filter(ordre => ordre.id !== ordreId);
-  
-        await updateDoc(userDocRef, { bestillinger: updatedOrders });
-      }
-  
-      // Genhent opdaterede bestillinger
-      const newUserDocSnap = await getDoc(userDocRef);
-      if (newUserDocSnap.exists()) {
-        const newOrdreData = newUserDocSnap.data().bestillinger || [];
-        setUserOrders(newOrdreData);
-      }
+
+      await updateDoc(userDocRef, {
+        bestillinger: arrayRemove(ordre)
+      });
+
+      setUserOrders((prevOrders) =>
+        prevOrders.filter((existingOrdre) => existingOrdre.id !== ordre.id)
+      );
     } catch (error) {
       console.error("Fejl ved sletning af bestilling:", error);
     }
